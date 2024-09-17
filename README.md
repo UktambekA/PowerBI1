@@ -26,5 +26,6 @@ Ushbu dashboard AdventureWorks2014 namuna ma'lumotlar bazasidan foydalanadi. Siz
 ![image](https://github.com/user-attachments/assets/7650d8fb-30e0-442a-8558-db7663cadfe0)
 
 
-![image](https://github.com/user-attachments/assets/c4c8eb60-e154-49f2-9ff6-460e69815db0)
+![image](https://github.com/user-attachments/assets/270ae5f9-76d6-42e1-8837-10e09ae039b7)
+
 
