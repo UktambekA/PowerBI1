@@ -23,3 +23,8 @@ Bu repozitoriy AdventureWorks2014 namuna ma'lumotlar bazasiga asoslangan dashboa
 
 Ushbu dashboard AdventureWorks2014 namuna ma'lumotlar bazasidan foydalanadi. Siz uni [Microsoft'ning GitHub repozitoriysi](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks)dan yuklab olishingiz mumkin.
 
+![image](https://github.com/user-attachments/assets/7650d8fb-30e0-442a-8558-db7663cadfe0)
+
+
+![image](https://github.com/user-attachments/assets/c4c8eb60-e154-49f2-9ff6-460e69815db0)
+
