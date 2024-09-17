@@ -90,3 +90,52 @@ GROUP BY
     st.Name
 ORDER BY 
     TotalSales DESC;
+
+
+
+WITH CustomerSales AS (
+    SELECT 
+        CustomerID,
+        SUM(TotalDue) AS TotalSales,
+        COUNT(DISTINCT SalesOrderID) AS OrderCount
+    FROM 
+        Sales.SalesOrderHeader
+    GROUP BY 
+        CustomerID
+)
+SELECT 
+    soh.SalesOrderID,
+    soh.OrderDate,
+    soh.TotalDue,
+    soh.CustomerID,
+    cs.TotalSales AS CustomerLifetimeValue,
+    cs.OrderCount AS CustomerOrderCount,
+    soh.SalesPersonID,
+    sp.SalesQuota,
+    st.TerritoryID,
+    st.Name AS TerritoryName,
+    st.CountryRegionCode,
+    st.[Group] AS SalesTerritoryGroup,
+    p.ProductID,
+    p.Name AS ProductName,
+    p.StandardCost,
+    p.ListPrice,
+    pc.Name AS CategoryName,
+    ps.Name AS SubcategoryName,
+    sod.OrderQty,
+    sod.UnitPrice,
+    sod.LineTotal,
+    sod.UnitPriceDiscount,
+    YEAR(soh.OrderDate) AS OrderYear,
+    MONTH(soh.OrderDate) AS OrderMonth,
+    DATENAME(weekday, soh.OrderDate) AS OrderDayOfWeek,
+    DATEDIFF(day, soh.OrderDate, soh.ShipDate) AS DaysToShip
+FROM 
+    Sales.SalesOrderHeader soh
+    JOIN Sales.SalesOrderDetail sod ON soh.SalesOrderID = sod.SalesOrderID
+    JOIN Sales.SalesTerritory st ON soh.TerritoryID = st.TerritoryID
+    JOIN Production.Product p ON sod.ProductID = p.ProductID
+    JOIN Production.ProductSubcategory ps ON p.ProductSubcategoryID = ps.ProductSubcategoryID
+    JOIN Production.ProductCategory pc ON ps.ProductCategoryID = pc.ProductCategoryID
+    LEFT JOIN Sales.SalesPerson sp ON soh.SalesPersonID = sp.BusinessEntityID
+    JOIN CustomerSales cs ON soh.CustomerID = cs.CustomerID
