@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/6e5f88f5-9bc7-461f-9754-30454428aadc)# AdventureWorks2014 Dashboard
+# AdventureWorks2014 Dashboard
 
 Bu repozitoriy AdventureWorks2014 namuna ma'lumotlar bazasiga asoslangan dashboard loyihasini o'z ichiga oladi. Dashboard sotuvlar, buyurtmalar va mahsulot samaradorligi ma'lumotlari bo'yicha vizual tahlillarni taqdim etadi.
 
